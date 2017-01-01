@@ -1,13 +1,13 @@
 let express = require('express');
-let User = require('../models/user');
+let userController = require('../controllers/userController');
 
 var router = express.Router();
 
-router.post('/users', function (req, callback) {
-
-	User.forge(req.body)
-		.save()
-		.then((user) => callback(user));
+router.post('/users', function (req, res) {
+	userController.save(req.body, function(user){
+		res.json(user);
+	});
+	
 });
 
 module.exports = router;
