@@ -1,11 +1,11 @@
 let Joi = require('joi');
 
 module.exports = {
-	createUser: {
+	user: {
 		body: {
 		  username: Joi.string(),
 		  email: Joi.string().required(),
 		  password: Joi.string().required()
 		}
 	}
-}
+};
