@@ -4,5 +4,5 @@ exports.save = function(user, callback) {
 
 	User.forge(user).save()
 		.then((user) => callback(user))
-		.catch((error) => callback(error))
+		.catch((err) => callback({hasError: true,  error: err}))
 };

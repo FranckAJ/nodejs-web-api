@@ -5,7 +5,8 @@ module.exports = db.Model.extend({
 	hasTimestamps: true,
 	bcrypt: {
 		field: 'password'
-	} 
+	},
+	hidden: ['password']
 
 });
 

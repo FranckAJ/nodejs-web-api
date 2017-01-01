@@ -3,10 +3,15 @@ let userController = require('../controllers/userController');
 
 var router = express.Router();
 
+
 router.post('/users', function (req, res) {
 	userController.save(req.body, function(obj){
-		console.log(obj);
-		res.json(obj);
+		if (obj.hasError) {
+			res.status(500).json({error: true, data: obj.error});
+
+		}else{
+			res.json(obj);	
+		} 
 	});
 	
 });
