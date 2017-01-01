@@ -1,5 +1,7 @@
 let express = require('express');
 let bodyParser = require('body-parser');
+let expressValidation = require('express-validation');
+
 
 let app = module.exports = express();
 
@@ -14,10 +16,17 @@ let server = app.listen(app.get('port'), function() {
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
 
+app.use((err, req, res, next) => {
+  if (err instanceof expressValidation.ValidationError) {
+    res.status(err.status).json(err);
+  } else {
+    res.status(500)
+      .json({
+        status: err.status,
+        message: err.message
+      });
+  }
 });
+
+

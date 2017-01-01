@@ -1,8 +1,8 @@
 let User = require('../models/user');
 
-exports.save = function(user, callback) {
+exports.save = function(req, res, next) {
 
-	User.forge(user).save()
-		.then((user) => callback(user))
-		.catch((err) => callback({hasError: true,  error: err}))
+	User.forge(req.body).save()
+		.then((user) => res.json(user))
+		.catch((err) => next(err))
 };

@@ -1,19 +1,15 @@
 let express = require('express');
 let userController = require('../controllers/userController');
+let validate = require('express-validation');
+let paramValidation = require('../validation/user');
 
 var router = express.Router();
 
 
-router.post('/users', function (req, res) {
-	userController.save(req.body, function(obj){
-		if (obj.hasError) {
-			res.status(500).json({error: true, data: obj.error});
+router.route('/users')
 
-		}else{
-			res.json(obj);	
-		} 
-	});
-	
-});
+	.post(validate(paramValidation.createUser), userController.save);
+
+
 
 module.exports = router;
