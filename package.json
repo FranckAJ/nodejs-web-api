@@ -4,7 +4,8 @@
   "description": "case study about NodeJS",
   "main": "app.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "knex": "knex"
   },
   "repository": {
     "type": "git",
