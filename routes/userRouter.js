@@ -5,6 +5,7 @@ var router = express.Router();
 
 router.post('/users', function (req, res) {
 	userController.save(req.body, function(obj){
+		console.log(obj);
 		res.json(obj);
 	});
 	
