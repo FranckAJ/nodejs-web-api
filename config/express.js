@@ -10,12 +10,18 @@ app.set('port', (process.env.PORT || 3000));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(function(err, req, res, next){
-  if (err instanceof expressValidation.ValidationError) {
-    res.status(err.status).json(err);
+
+app.use(function (err, req, res, next) {
+  
+  if (err instanceof ev.ValidationError){
+  	return res.status(err.status).json(err);
+  } 
+
+  if (process.env.NODE_ENV !== 'production') {
+    return res.status(500).send(err.stack);
 
   } else {
-    res.status(500).json(err)
+    return res.status(500);
   }
 
 });
