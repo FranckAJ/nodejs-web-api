@@ -1,5 +1,7 @@
 let app = require('./config/express');
-var usersRoutes = require('./RESTful/routes/userRouter');
+var userRoutes = require('./RESTful/routes/userRouter');
+var authRoutes = require('./RESTful/routes/authRouter');
+
 
 /**
  *
@@ -9,7 +11,8 @@ app.get('/', function(req, res) {
 		' | '+ process.arch +' | '+ process.platform +' </h3>');
 });
 
-app.use('/api', usersRoutes);
+app.use('/api', userRoutes);
+app.use('/api', authRoutes);
 
 
 /**
