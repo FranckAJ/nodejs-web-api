@@ -21,6 +21,6 @@ exports.authenticate = function(req, res, next) {
 				})
 			}
 		})
-		.catch(res.send("invalid username", HTTPStatus.UNAUTHORIZED))
+		.catch((err) => next(HTTPStatus.UNAUTHORIZED))
 };
 

@@ -1,6 +1,7 @@
 let app = require('./config/express');
 var userRoutes = require('./RESTful/routes/userRouter');
 var authRoutes = require('./RESTful/routes/authRouter');
+let jwt = require('jsonwebtoken');
 
 
 /**

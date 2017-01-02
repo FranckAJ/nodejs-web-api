@@ -12,7 +12,7 @@
     "url": "https://github.com/FranckAJ/nodejs-web-api.git"
   },
   "author": "Franck Aragão",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FranckAJ/nodejs-web-api/issues"
   },
@@ -21,6 +21,7 @@
     "bookshelf": "^0.10.2",
     "bookshelf-bcrypt": "^2.1.0",
     "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
     "express-validation": "^1.0.1",
     "http-status": "^0.2.3",
     "joi": "^10.1.0",
