@@ -1,9 +1,7 @@
 let express = require('express');
 var userRoutes = require('./userRouter');
 var authRoutes = require('./authRouter');
-let expressJwt = require('express-jwt');  
-let authenticate = expressJwt({secret : 'lets go'});
-
+let expressJwt = require('../../config/jwt');
 let router = express.Router();
 
 /**
@@ -14,21 +12,15 @@ router.get('/', function(req, res) {
 		' | '+ process.arch +' | '+ process.platform +' </h3>');
 });
 
-router.use('/users', userRoutes);
-router.use('/auth', authRoutes);
-
-
 /**
  *
  */
-router.get('/admin', authenticate, function(req, res) {  
+router.get('/admin', expressJwt, function(req, res) {  
   res.status(200).json(req.user);
 });
 
 
-// mount authentication routes at /auth
-router.use('/auth', authRoutes);
-// mount user routes at /users
 router.use('/users', userRoutes);
+router.use('/auth', authRoutes);
 
 module.exports = router;
