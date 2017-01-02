@@ -1,5 +1,5 @@
 let express = require('express');
-let userController = require('../controllers/userController');
+let userController = require('../controllers/user');
 let validate = require('express-validation');
 let isValid = require('../validation/user');
 

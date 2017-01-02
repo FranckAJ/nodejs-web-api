@@ -1,9 +1,9 @@
-let User = require('../models/user');
 let jwt = require('jsonwebtoken');
-var HTTPStatus = require('http-status');
+let HTTPStatus = require('http-status');
+let User = require('../models/user');
+let properties = require('../../config/env');
 
-const JWT_KEY = 'lets go';
-
+const JWT_KEY = properties.jwt.client_secret;
 
 exports.authenticate = function(req, res, next) {
 	var user;

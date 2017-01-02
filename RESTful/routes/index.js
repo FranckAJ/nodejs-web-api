@@ -1,6 +1,6 @@
 let express = require('express');
-var userRoutes = require('./userRouter');
-var authRoutes = require('./authRouter');
+var userRoutes = require('./user');
+var authRoutes = require('./auth');
 let expressJwt = require('../../config/jwt');
 let router = express.Router();
 

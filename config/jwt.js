@@ -1,8 +1,8 @@
 let expressJwt = require('express-jwt');  
-const JWT_KEY = 'lets go';
+let properties = require('./env');
 
 const authenticate = expressJwt({
-  secret: JWT_KEY
+  secret: properties.jwt.client_secret
 });
 
 module.exports = authenticate;
