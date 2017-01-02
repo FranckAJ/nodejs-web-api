@@ -1,9 +1,10 @@
 # Node.js RESTful API
-#### A RESTful API built with Node.js and PostgresSQL
+#### A RESTful API built with Node.js, Babel and PostgresSQL
 API with CRUD, authentication and autorization of users.
 
 ###Libraries and tools used
 * npm - to managment of dependicies and tasks.
+* Babel - Compile code in ES2015.
 * Express - server and routing.
 * Knex - SQL query builder.
 * Bookshelf - ORM.
