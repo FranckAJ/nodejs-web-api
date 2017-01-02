@@ -6,7 +6,7 @@ let isValid = require('../validation/auth');
 var router = express.Router();
 
 
-router.route('/sessions')
+router.route('/')
 
 	.post(validate(isValid.auth), authController.authenticate);
 

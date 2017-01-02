@@ -6,7 +6,7 @@ let isValid = require('../validation/user');
 var router = express.Router();
 
 
-router.route('/users')
+router.route('/')
 
 	.post(validate(isValid.user), userController.save);
 
