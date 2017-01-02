@@ -1,5 +1,5 @@
 let app = require('./config/express');
-let routes = require('./RESTful/routes');
+let routes = require('./src/routes');
 
 
 app.use('/api', routes);
