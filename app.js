@@ -1,7 +1,8 @@
 let app = require('./config/express');
 var userRoutes = require('./RESTful/routes/userRouter');
 var authRoutes = require('./RESTful/routes/authRouter');
-let jwt = require('jsonwebtoken');
+let expressJwt = require('express-jwt');  
+let authenticate = expressJwt({secret : 'lets go'});
 
 
 /**
@@ -14,6 +15,12 @@ app.get('/', function(req, res) {
 
 app.use('/api', userRoutes);
 app.use('/api', authRoutes);
+
+
+
+app.get('/admin', authenticate, function(req, res) {  
+  res.status(200).json(req.user);
+});
 
 
 /**
