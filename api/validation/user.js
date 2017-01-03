@@ -1,4 +1,4 @@
-let Joi = require('joi');
+import Joi from 'joi';
 
 module.exports = {
 	user: {

@@ -1,7 +1,9 @@
+
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
 var babel = require('gulp-babel');
 var del = require('del');
+var runSequence = require('run-sequence');
+
 
 const paths = {
   js: ['./**/*.js', '!dist/**', '!migrations/**', '!node_modules/**'],
@@ -18,10 +20,6 @@ gulp.task('babel', function() {
       .pipe(gulp.dest('dist'));               
 });
 
-gulp.task('jshint', function () {
-  return gulp.src('dist/**/*.js')
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'));
+gulp.task('default', function (cb) {
+	return runSequence('clean', ['babel'], cb)
 });
-
-gulp.task('default', ['clean','babel', 'jshint']);

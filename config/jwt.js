@@ -1,5 +1,5 @@
 let expressJwt = require('express-jwt');  
-let properties = require('./env');
+import properties from './env';
 
 const authenticate = expressJwt({
   secret: properties.jwt.client_secret

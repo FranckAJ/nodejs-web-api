@@ -1,7 +1,7 @@
 let jwt = require('jsonwebtoken');
 let HTTPStatus = require('http-status');
-let User = require('../models/user');
-let properties = require('../../config/env');
+import User from '../models/user';
+import properties from '../../config/env';
 
 const JWT_KEY = properties.jwt.client_secret;
 

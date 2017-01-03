@@ -1,6 +1,5 @@
-let app = require('./config/express');
-let routes = require('./src/routes');
-
+import app from './config/express';
+import routes from './api/routes';
 
 app.use('/api', routes);
 

@@ -1,10 +1,16 @@
 'use strict';
 
+var _env = require('./env');
+
+var _env2 = _interopRequireDefault(_env);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var expressJwt = require('express-jwt');
-var properties = require('./env');
+
 
 var authenticate = expressJwt({
-  secret: properties.jwt.client_secret
+  secret: _env2.default.jwt.client_secret
 });
 
 module.exports = authenticate;

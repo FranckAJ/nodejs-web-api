@@ -20,6 +20,7 @@
     "body-parser": "^1.15.2",
     "bookshelf": "^0.10.2",
     "bookshelf-bcrypt": "^2.1.0",
+    "event-stream": "^3.3.4",
     "express": "^4.14.0",
     "express-jwt": "^5.1.0",
     "express-validation": "^1.0.1",
@@ -35,8 +36,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-jshint": "^2.0.4",
-    "jshint": "^2.9.4",
-    "standard": "^8.6.0"
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^1.9.1"
   }
 }
