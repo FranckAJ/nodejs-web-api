@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "express-jwt": "^5.1.0",
     "express-validation": "^1.0.1",
+    "github": "^7.3.1",
     "http-status": "^0.2.3",
     "joi": "^10.1.0",
     "jsonwebtoken": "^7.2.1",
