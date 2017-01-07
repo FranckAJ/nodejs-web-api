@@ -6,6 +6,10 @@ import github from '../../config/github.js';
 
 const JWT_KEY = properties.jwt.client_secret;
 
+exports.authorization = (req, res, next) => {
+	
+};
+
 exports.authenticate = (req, res, next) => {
 
 	if(req.body.typeAuth === 'LOCAL'){
