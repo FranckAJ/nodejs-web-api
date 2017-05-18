@@ -2,7 +2,7 @@
 #### A RESTful API built with Node.js, Babel and PostgresSQL
 API with CRUD, authentication and autorization of users.
 
-###Libraries and tools used
+### Libraries and tools used
 * npm - to managment of dependicies and tasks
 * Babel - Compile code from ES2015
 * Express - server and routing
@@ -14,7 +14,7 @@ API with CRUD, authentication and autorization of users.
 * Gulp - Task executor
 
 
-###USAGE
+### USAGE
 This project depends on a postgres database that must be accessible, you can change the connection details in `config/db.js`.
 
 * clone this repository;
@@ -25,7 +25,7 @@ This project depends on a postgres database that must be accessible, you can cha
 * In directory `dist`, use command line `node app.js` to started local server.
 * Open browser in `http://localhost:3000/api/` to check the status of the API.
 
-###Unit an Integrations Testing 
+### Unit an Integrations Testing 
 in progress...
 
 
